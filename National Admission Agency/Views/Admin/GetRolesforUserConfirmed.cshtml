@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "GetRolesforUserConfirmed";
+}
+<br>
+<h2>Sucess ! Got the role for this user as below.</h2>
+<br/>
+@if (ViewBag.RolesForThisUser != null && ViewBag.ThisUser != null)
+{
+<div>
+    <h4>Username: @Html.Encode(ViewBag.ThisUser) </h4>
+    <h4>Role: @foreach (string r in ViewBag.RolesForThisUser)
+    {
+        @r
+    }
+    </h4>
+</div>
+}
+

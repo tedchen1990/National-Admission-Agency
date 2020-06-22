@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .myButton {
+            box-shadow: 0px 0px 0px 2px #9fb4f2;
+            background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+            background-color: #7892c2;
+            border-radius: 10px;
+            border: 1px solid #4e6096;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 19px;
+            padding: 12px 37px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #283966;
+        }
+
+            .myButton:hover {
+                background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+                background-color: #476e9e;
+            }
+
+            .myButton:active {
+                position: relative;
+                top: 1px;
+            }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("National Admission Agency", "Index","Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Applicant</h2>
+                <p> Apply your course</p>
+                <p>Create/Edit your own profile</p>
+
+                <p><a>@Html.ActionLink("Apply", "searchUserProfile", "Profiles", new { area = "" }, new { @class = "btn btn-default" })</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Admin/Staff</h2>
+                <p>Role setting </p>
+                <p>Manage Profiles and Applications</p>
+                <a>@Html.ActionLink("Manage ", "AdminAndStaff", "Admin", new { area = "" }, new { @class = "btn btn-default" })</a>
+            </div>
+        </div>
+        <hr style="border: 2px solid black;" />
+        @RenderBody()
+        <hr style="border: 2px solid black;" />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Ted Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

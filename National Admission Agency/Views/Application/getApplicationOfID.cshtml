@@ -1,0 +1,80 @@
+﻿@model IEnumerable<NAA.Data.Application>
+
+@{
+    ViewBag.Title = "getApplicationOfID";
+}
+<br>
+<h2>
+    Your Applications
+</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicantId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UniversityId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonalStatement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherReference)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherContactDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UniversityOffer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Firm)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicantId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniversityId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalStatement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherReference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherContactDetails)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniversityOffer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firm)
+            </td>
+            <td>
+                @Html.ActionLink("Frim", "editApplication", new { id = item.ApplicationId }) |
+                @Html.ActionLink("View", "detailApplication", new { id = item.ApplicationId, message="", viewback = "User" }) |
+                @Html.ActionLink("Delete", "deleteApplication", new { id = item.ApplicationId })
+            </td>
+        </tr>
+    }
+</table>
+<br>
+<h3 style="text-align:center">@ViewBag.message</h3>
+<br>
+<p>
+    @Html.ActionLink("Back", "searchUserProfile", "Profiles")
+</p>

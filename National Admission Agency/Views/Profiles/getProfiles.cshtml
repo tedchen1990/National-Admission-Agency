@@ -1,0 +1,65 @@
+﻿@model IEnumerable<NAA.Data.Profile>
+
+@{
+    ViewBag.Title = "getProfiles";
+}
+<br>
+<h2>List All Applicants Profiles</h2>
+
+<table class="table">
+    <tr>
+        <th>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicantName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicantAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicantId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicantName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicantAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.ActionLink("View", "AandS_getProfile_Details", new { id = item.ApplicantId }) |
+                @Html.ActionLink("Delete", "deleteProfiles", new { id = item.ApplicantId, Controller = "ProfileManage" })
+            </td>
+        </tr>
+    }
+
+</table>
+<br>
+<h3 style="text-align:center">@ViewBag.message</h3>
+<br>
+<p>
+    @Html.ActionLink("Back", "AdminAndStaff", "Admin")
+</p>

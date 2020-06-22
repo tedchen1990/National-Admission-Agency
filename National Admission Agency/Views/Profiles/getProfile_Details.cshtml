@@ -1,0 +1,60 @@
+﻿@model NAA.Data.Profile
+
+@{
+    ViewBag.Title = "getProfile_Details";
+}
+<br>
+<h2>Applicant</h2>
+<hr />
+<h3>Profile Info</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+    </dl>
+</div>
+<h4>
+    @Html.ActionLink("Edit", "editProfiles", new { id = Model.ApplicantId, Controller = "ProfileManage" }) |
+    @Html.ActionLink("Create New", "addProfiles", "ProfileManage")
+</h4>
+<hr />
+@Html.ActionLink("Apply", "getUniversity", new { applicantID = Model.ApplicantId, Controller = "University" }, new { @class = "myButton" })
+&nbsp;&nbsp;&nbsp;
+@Html.ActionLink("Your Applications ", "getApplicationOfID", new { id = Model.ApplicantId, Controller = "Application" }, new { @class = "myButton" })

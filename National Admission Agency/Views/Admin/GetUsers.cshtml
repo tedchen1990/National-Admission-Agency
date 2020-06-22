@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "GetUsers";
+}
+<br>
+<h2>List of Users</h2>
+
+@foreach (var user in Model)
+{
+    <p>
+        @user.UserName 
+    </p>
+}
+
+

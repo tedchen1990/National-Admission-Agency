@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "AdminAndStaff";
+}
+<br>
+<h2>Admin/Staff</h2>
+<hr />
+@Html.ActionLink("Applications", "getApplication", new { Controller = "Application", message = "" }, new { @class = "myButton" })
+&nbsp;&nbsp;&nbsp;
+@Html.ActionLink("Profiles", "getProfiles", new { Controller = "Profiles", message = "" }, new { @class = "myButton" })
+<hr />
+@Html.ActionLink("Assign Role For User", "ManageUserRoles", new { Controller = "Admin" }, new { @class = "myButton" })&nbsp;&nbsp;&nbsp;
+@Html.ActionLink("Check User's Role", "GetRolesforUser", new { Controller = "Admin" }, new { @class = "myButton" })&nbsp;&nbsp;&nbsp;
+@Html.ActionLink("Role List", "GetRoles", new { Controller = "Admin" }, new { @class = "myButton" })&nbsp;&nbsp;&nbsp;
+@Html.ActionLink("User List", "GetUsers", new { Controller = "Admin" }, new { @class = "myButton" })

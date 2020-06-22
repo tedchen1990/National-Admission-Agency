@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "CheakRole";
+}
+<br>
+<h2>Check Result</h2>
+<br />
+@if (ViewBag.RolesForThisUser != null && ViewBag.ThisUser != null)
+{
+    <div>
+        <h4>Username: @Html.Encode(ViewBag.ThisUser) </h4>
+        <h4>
+            Role: @foreach (string r in ViewBag.RolesForThisUser)
+            {
+                @r
+            }
+        </h4>
+    </div>
+}
+else
+{
+    <h4>No result!</h4>
+}
